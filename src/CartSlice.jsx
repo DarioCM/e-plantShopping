@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const CartSlice = createSlice({
+
   name: 'cart',
   initialState: {
     items: [], // Initialize items as an empty array
+    totalItems: 0,
   },
 
   reducers: {
@@ -26,13 +28,14 @@ export const CartSlice = createSlice({
            quantity: 1,
          });
        }
+       state.totalItems++;
     },
 
 
     removeItem: (state, action) => {
         // Remove the item from the cart and return a new array of items that do not include the item to be removed
       state.items = state.items.filter(item => item.name !== action.payload);
-
+      state.totalItems = state.items.length;
     },
 
     updateQuantity: (state, action) => {
@@ -44,12 +47,14 @@ export const CartSlice = createSlice({
         // Update the quantity of the item
         if (itemToUpdate) {
           itemToUpdate.quantity = quantity;
+            state.totalItems += (quantity - itemToUpdate.quantity);
         }
     },
 
-
   },
 });
+
+export const selectorTotalItems = (state) => state.cart.totalItems;
 
 export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
 
