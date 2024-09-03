@@ -51,8 +51,8 @@ export const CartSlice = createSlice({
 
         // Update the quantity of the item
         if (itemToUpdate) {
-          itemToUpdate.quantity = quantity;
-            state.totalItems += (quantity - itemToUpdate.quantity);
+            itemToUpdate.quantity = quantity;
+            state.totalItems = state.items.reduce((total, item) => total + item.quantity, 0);
         }
     },
 

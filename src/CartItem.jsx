@@ -31,7 +31,7 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleIncrement = (item) => {
         // dispatch the updateQuantity action reducer
-        dispatch(updateQuantity({ ...item, quantity: item.quantity + 1 }));
+        dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
   };
 
   const handleDecrement = (item) => {
@@ -42,7 +42,7 @@ const CartItem = ({ onContinueShopping }) => {
             dispatch(removeItem(item));
       } else {
           // dispatch the updateQuantity action reducer
-          dispatch(updateQuantity({ ...item, quantity: item.quantity - 1 }));
+          dispatch(updateQuantity({ name: item.name, quantity: item.quantity - 1 }));
       }
 
   };
