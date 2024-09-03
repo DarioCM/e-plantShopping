@@ -1,9 +1,10 @@
 .about-us-container {
-    width: 1000px;
-    /* margin: 0 auto; */
-    /* padding: 20px; */
-    /* background-color: red; */
-    text-align: justify;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: justify;
   }
   
   .about-us-heading {

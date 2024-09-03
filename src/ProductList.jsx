@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
 import {addItem, selectorTotalItems} from "./CartSlice.jsx";
@@ -254,17 +254,17 @@ function ProductList() {
     textDecoration: 'none',
    }
    const handleCartClick = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
 };
 const handlePlantsClick = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
     setShowCart(false); // Hide the cart when navigating to About Us
 };
 
    const handleContinueShopping = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     setShowCart(false);
   };
     return (
