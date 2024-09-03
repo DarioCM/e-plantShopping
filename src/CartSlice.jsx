@@ -36,7 +36,7 @@ export const CartSlice = createSlice({
         // Remove the item from the cart and return a new array of items that do not include the item to be removed
         const { name } = action.payload;
         state.items = state.items.filter(item => item.name !== name);
-        state.totalItems--;
+        state.totalItems = state.items.length;
 
 
 
